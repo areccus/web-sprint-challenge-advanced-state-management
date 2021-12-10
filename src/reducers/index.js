@@ -6,7 +6,7 @@ export const initialState = {
     error: ''
 }
 
-export const reducer = (state = initialState, action)=>{
+const reducer = (state = initialState, action)=>{
     switch(action.type) {
         case LOADING:
             return{
@@ -29,7 +29,6 @@ export const reducer = (state = initialState, action)=>{
             return {
                 ...state,
                 smurfs: [...state.smurfs, action.payload],
-                id: Math.floor(Math.random() *1000),
                 loading: false
             }
         case FORM_ERROR:
@@ -44,7 +43,7 @@ export const reducer = (state = initialState, action)=>{
 }
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
-
+export default reducer
 
 //Task List:
 //1. Adds the following state values into the initialState:
